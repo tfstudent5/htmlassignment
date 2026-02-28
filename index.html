@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+	<meta charset="utf-8">  
+	<title>My Assignment</title>
+</head>
+<body>  
+	<a href="#maincontent">Skip to main content</a>
+	<header>
+	<h1>Things that I have learnt on this course</h1>
+	<nav>
+		<ul>
+		    <li> <a href="#introduction">Introduction</a> </li>
+		    <li> <a href="#structure_semantic">Structural &amp; Semantic Tags</a> </li>
+		    <li> <a href="#accessibility">Accessibility</a> </li>
+			<li> <a href="#other_things">Other Things</a> </li>
+		</ul>
+	</nav>
+    </header>
+   
+	<main id="maincontent">
+	
+	<section id="introduction">
+		<h2>Introduction</h2>
+		<p>This course has been an interesting introduction to HTML (Hypertext Markup Language).HTML is a markup language that uses tags to structure content, which are then interpreted by a web browser. Although there are many different tags, they can broadly be divided into two main groups: <a href="#structural-tags">structural</a> and <a href="#semantic-tags">semantic</a>. Structural tags form the basic framework or skeleton of a webpage, while semantic tags act as labelled containers that describe the meaning of the content they enclose.</p>
+		<p>While HTML has always included semantic elements such as headings and paragraphs, HTML5 introduced a range of new semantic tags designed to describe the structure and purpose of major sections of a webpage, such as &lt;header&gt;, &lt;nav&gt;, and &lt;main&gt;.</p>
+		<p>This course emphasised the importance of <a href="#accessibility">accessibility</a> and demonstrated how semantic tags improve accessibility. For example, semantic tags can be interpreted by screen readers, making web pages more accessible to users who are blind or partially sighted. It was surprising to learn how many people live with disabilities, and failing to consider accessibility not only excludes a significant number of users but also undermines inclusive and responsible web design.</p>
+    </section>
+	
+	<section id="structure_semantic">
+		<h2> Structural and Semantic Tags</h2>
+		<section id="structural-tags">
+			<h3>Structural Tags</h3>
+			<p>Structural tags are used to organise the layout of a webpage and control how content is arranged on the screen. They help group sections of content together and create a clear framework for the page, but they do not describe what the content means. By using structural tags, developers can keep a webpage organised, easier to read, and easier to manage as it grows.</p>
+			<h4>Examples of structural tags</h4>
+		    <ul>  
+				<li>&lt;html&gt; – the root element that contains the entire webpage</li>
+				<li>&lt;head&gt; – contains metadata and information about the document</li>
+				<li>&lt;body&gt; – contains all visible content on the webpage</li>
+				<li>&lt;div&gt; – groups blocks of content together</li>
+				<li>&lt;span&gt; – groups inline content within text</li>
+				<li>&lt;br&gt; – inserts a line break</li>
+				<li>&lt;hr&gt; – inserts a horizontal rule</li>
+			</ul>
+		</section>
+		
+		<section id="semantic-tags">
+			<h3>Semantic Tags</h3>
+			<p> Semantic tags are HTML elements that explain what the content on a webpage is and what purpose it serves. They help browsers and assistive technologies understand different sections of a page, rather than just displaying them. Using semantic tags makes webpages clearer, more accessible, and easier to understand.</p>
+			
+			<h4>Examples of Semantic Tags</h4>
+			
+			<ul>  
+				<li>    &lt;header&gt; – Introductory content for a page or section, often containing headings or navigation.  </li>  
+				<li>    &lt;nav&gt; – A section that contains primary navigation links.  </li>  
+				<li>    &lt;main&gt; – The main, unique content of the page (only one per page).  </li>
+				<li>    &lt;article&gt; – Self-contained content that can stand alone or be reused, such as a blog post or news item.  </li> 
+				<li>    &lt;section&gt; – A thematic grouping of related content within a page.  </li>  
+				<li>    &lt;aside&gt; – Content indirectly related to the main content, such as sidebars or callouts.  </li>  
+				<li>    &lt;footer&gt; – Closing or metadata content for a page or section, such as author info or links.  </li>
+			</ul>
+		</section>
+	</section>
+
+	<section id="accessibility">
+		<h2>Accessibility</h2>
+	
+		<h3>The W3C Validator</h3>
+		<p>The <a href="https://validator.w3.org" target="_blank"> W3C Markup Validator</a> is not an accessibility tool; however, it supports accessibility by ensuring that HTML is valid and correctly structured, which is essential for assistive technologies to function reliably.</p>
+		<figure>
+			<a href="images/w3cvalidator.jpg" target="_blank">
+			    <img src="images/w3cvalidator.jpg" width="800" alt="W3C validator output showing an error caused by an incorrect heading tag">
+		    </a>
+			<figcaption>The output for an earlier version of this webpage when the end tag &lt;/h1&gt; was changed to &lt;h&gt;</figcaption>
+		</figure>
+		
+		<p>Another issue which was picked up by the W3C validator is setting the width to a percentage:</p>
+		<figure>
+			<a href="images/w3cvalidator_imagesize_error.jpg" target="_blank">
+			    <img src="images/w3cvalidator_imagesize_error.jpg" width="800" alt="W3C validator output showing an error caused by setting width to 50 percent">
+		    </a>
+			<figcaption>The w3c validator returned an error when I set the image width to 50%. I believe this would require CSS to fix?</figcaption>
+		</figure>	
+		
+		<p>In the course we were told to set the width as a percentage so the image could be resized for different sized displays</p>
+		<code>
+			&lt;img src="images/w3cvalidator.jpg" width="50%"&gt;
+		</code>
+		<p>However, this does not seem to be acceptable syntax, so I had to change it to pixels to avoid upsetting the w3c validator</p>
+			<code>
+			&lt;img src="images/w3cvalidator.jpg" width="800"&gt;
+		</code>
+		
+		<h3>WAVE Web Accessibility Evaluation Tool</h3>
+		<p><a href="https://wave.webaim.org" target="_blank">WAVE</a> is a tool that checks web pages for accessibility problems and shows where changes are needed to make the site usable for people with disabilities. For example:</p>
+		<ul>
+			<li>missing image alt text, </li>
+			<li>poor colour contrast, </li>
+			<li>incorrect heading structure</li>
+		</ul>
+		<figure>
+			<a href="images/wave.jpg" target="_blank">
+			    <img src="images/wave.jpg" width="800" alt="The WAVE website is an important tool for improving web accessibility">
+		    </a>
+			<figcaption>The WAVE web accessibility Evaluation Tool is very useful for assessing the accessibility of a website</figcaption>
+		</figure>
+	    </section>
+	 	
+		<section id="other_things">
+		<h2>Other Things</h2>
+		
+		<h3>HTML Character Entities</h3>
+		<p>When creating this page, I needed to try and stop the browser from interpreting &lt; and &gt; as signifying the start and end of a tag. I did this using &amp;lt; and &amp;gt; which are character entities representing the less‑than symbol and greater than symbol. Such character entities are used when the character needs to be displayed as text rather than interpreted as part of an HTML tag. Other examples include:</p>
+			<ul>
+				<li> &amp;amp; - the ampersand &amp; symbol</li>
+				<li> &amp;quot; - for the &quot;double quote&quot; symbol</li>
+				<li> &amp;nbsp; - for a non-breaking space</li>
+			</ul>	
+	</section>		
+	</main>
+	
+	<footer>
+		<h2>External Websites</h2>
+		<ul>
+			<li><a href="https://validator.w3.org" target="_blank">W3C validator site</a></li>
+			<li><a href="https://wave.webaim.org" target="_blank">Wave - Web Accessibility Evaluation Tool</a></li>
+		</ul>	
+	</footer>
+</body>
+</html>
